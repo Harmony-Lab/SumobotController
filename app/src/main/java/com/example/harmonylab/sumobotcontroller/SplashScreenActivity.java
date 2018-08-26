@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -17,13 +19,17 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash_screen);
 
-        //LogoLauncher logoLauncher = new LogoLauncher();
-        //logoLauncher.start();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
+        imImageView = (ImageView) findViewById(R.id.imageView);
+        Animation animateLogo = AnimationUtils.loadAnimation(this, R.anim.logo_transition);
+        imImageView.startAnimation(animateLogo);
+
+        LogoLauncher logoLauncher = new LogoLauncher();
+        logoLauncher.start();
+        //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        //startActivity(intent);
+        //finish();
     }
-/*
+
     private class LogoLauncher extends Thread{
         public void run(){
             try{
@@ -39,5 +45,5 @@ public class SplashScreenActivity extends AppCompatActivity {
             SplashScreenActivity.this.finish();
         }
     }
-*/
+
 }

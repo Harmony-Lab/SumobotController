@@ -6,13 +6,5 @@
     <!-- The background color, preferably the same as your normal theme -->
     <item android:drawable="@color/colorBackgroundLogo"/>
 
-    <!-- Your product logo - 144dp color version of your app icon -->
-    <item android:gravity="center">
-
-        <bitmap
-            android:src="@drawable/logo"
-            android:gravity="center"/>
-
-    </item>
 
 </layer-list>
